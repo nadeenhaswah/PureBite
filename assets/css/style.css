@@ -1,0 +1,518 @@
+/* public  */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--main-font);
+}
+:root{
+    --accent-color: #4A9337;
+    --secondary-color: #EE7229;
+    --main-font : 'Kantumruy Pro', sans-serif 
+}
+
+/* public to sections */
+section:not(#home){
+    padding: 10px 50px; 
+    /* width: 100%;
+    height: 100vh; */
+    padding-top: 80px;
+}
+section#home nav{
+    padding: 10px 50px; 
+}
+.sectionTitle{
+    color: var(--accent-color);
+}
+/* start header  */
+nav{
+    background-color: #fff;
+    height:70px;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, .7);
+}
+
+.links  li a{
+    color: var(--accent-color);
+    position: relative;
+    transition: .5;
+}
+
+.nav-item{
+    position: relative;
+}
+.nav-item::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #0D7777;
+    text-decoration: underline;
+    transition: .5s;
+    color: #0D7777;
+}
+.nav-item:hover::after{
+    width: 100%;
+}
+/* end header  */
+
+/* btns */
+.getStarted{
+    color: #fff;
+    background-color: var(--secondary-color);
+    padding: 9px 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: .6s;
+}
+.getStarted:hover{
+    color: var(--secondary-color);
+    background-color: #fff;
+    font-weight: 600;
+}
+.logIn{
+    color: #fff;
+    background-color: var(--accent-color);
+    padding: 9px 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: .6s;
+}
+
+.learnMoreHero{
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+    background-color: non;
+    padding: 9px 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: .6s;
+}
+.learnMoreHero:hover{
+    color: var(--secondary-color);
+    background-color: #fff;
+    font-weight: 600;
+}
+
+/* start home  */
+section#home{
+    padding-top: 70px;
+}
+section#home .hero{
+    /* padding: 10px 30px;  */
+    width: 100%;
+    height: 89vh;
+    position: relative;
+    
+}
+section#home .hero::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .7);
+    z-index: -9;
+}
+section#home .hero img{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: -10;
+}
+section#home .hero .content{
+    position: absolute;
+    margin-top:90px;
+    top: 0;
+    color: #fff;
+    width: 100%;
+    padding: 0px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap:20px
+}
+section#home .hero .content h1{
+    width: 40%;
+    font-size: 3rem;
+    font-weight: 800;
+}
+section#home .hero .content p{
+    width: 60%;
+    font-weight:200;
+}
+section#home .hero .content div.btns{
+    width: 30%;
+    display: flex;
+    gap: 20px;
+}
+section#home .hero .content div.btns a{
+    text-align: center;
+}
+
+
+/* Extra small (xs): أقل من 576px */
+@media (max-width: 575.98px) {
+    nav{
+        height:auto;
+        padding: 10px 0;
+    }
+    section#home .hero .content h1{
+        font-size: 2rem;
+    }
+    section#home .hero .content{
+        margin-top: 80px;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+    }
+    section#home .hero .content h1 , section#home .hero .content p ,section#home .hero .content div.btns{
+        width: 90%;
+    }
+    section#home .hero .content p{
+        font-size: 18px;
+        font-weight: 400;
+    }
+}
+
+/* Small (sm): من 576px إلى 767px */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    section#home .hero .content{
+        margin-top: 40px;
+    }
+    section#home .hero .content h1 , section#home .hero .content p ,section#home .hero .content div.btns{
+        width: 90%;
+    }
+}
+
+/* Medium (md): من 768px إلى 991px */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    section#home .hero .content{
+        margin-top: 60px;
+    }
+    section#home .hero .content h1 , section#home .hero .content p ,section#home .hero .content div.btns{
+        width: 90%;
+    }
+}
+
+/* Large (lg): من 992px إلى 1199px */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+}
+/* Extra large (xl): من 1200px إلى 1399px */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+
+}
+
+/* XXL: أكبر من 1400px */
+@media (min-width: 1400px) {
+
+}
+
+
+/* end home  */
+
+
+/* start about  */
+section#about {
+    width: 100%;
+    height: 100vh;
+}
+section#about .content{
+    /* width: auto; */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+section#about .content .pic{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 100%;
+}
+section#about .content .pic img{
+    height: 100%;
+}
+section#about .content .aboutPoints{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 20px;
+    height: 100%;
+    padding-top: 20px;
+}
+
+section#about .content .aboutPoints .points{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    /* margin-top: 20px; */
+}
+section#about .content .aboutPoints .points .box{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+}
+section#about .content .aboutPoints .points .box .icon{
+    border-radius: 50%;
+    background-color: #EBE9E9;
+    color: var(--accent-color);
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+section#about .content .aboutPoints .points .box .desc{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+}
+section#about .content .aboutPoints .points .box .desc p{
+    font-size: 14px;
+}
+
+section#about .content .aboutPoints .link{
+    width: 100%;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+/* Extra small (xs): أقل من 576px */
+@media (max-width: 575.98px) {
+    section#about .content .aboutPoints{
+        width: 100%;
+    }
+    section#about .content .pic{
+        width: 100%;
+    }
+    section#about .content .pic img{
+        width: 97%;
+    }
+    section#about {
+    height: auto;
+}
+}
+
+/* Small (sm): من 576px إلى 767px */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    section#about .content .aboutPoints{
+        width: 100%;
+    }
+    section#about .content .pic{
+        width: 100%;
+    }
+    section#about {
+        height: auto;
+    }
+}
+
+/* Medium (md): من 768px إلى 991px */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    section#about .content .aboutPoints{
+        width: 100%;
+    }
+    section#about .content .pic{
+        width: 100%;
+    }
+}
+
+/* Large (lg): من 992px إلى 1199px */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+}
+
+/* Extra large (xl): من 1200px إلى 1399px */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+
+}
+
+/* XXL: أكبر من 1400px */
+@media (min-width: 1400px) {
+
+}
+
+/* end about  */
+
+/* start featuers */
+section#features{
+    width: 100%;
+    height: 100vh;
+}
+section#features .content{
+    /* width: 100%; */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+section#features .content .featuresPoints{
+    width: 46%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    padding-top: 20px;
+    gap: 20px;
+}
+section#features .content .pic{
+    width: 46%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+section#features .content .pic img{
+    /* width: 100%; */
+    height: 90%;
+    box-shadow:  0 0 10px rgba(0, 0, 0, .7);
+    border-radius: 10px;
+}
+section#features .content .featuresPoints .points{
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: start;
+    justify-content: start;
+}
+section#features .content .featuresPoints .points .feature{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+section#features .content .featuresPoints .points .feature i{
+    color: var(--accent-color);
+}
+section#features .content .featuresPoints .points .feature span{
+    font-weight: 600;
+}
+section#features .content .featuresPoints .getStarted{
+    margin-top: 30px;
+}
+
+/* Extra small (xs): أقل من 576px */
+@media (max-width: 575.98px) {
+
+    section#features .content .featuresPoints{
+        width: 100%;
+    }
+    section#features .content .pic{
+        width: 100%;
+    }
+    
+    section#features{
+    height: auto;
+}
+    section#features .content{
+        gap: 50px;
+    }
+    section#features .content .pic img{
+        width: 80%;
+    }
+}
+
+/* Small (sm): من 576px إلى 767px */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    section#features .content{
+        gap: 50px;
+    }
+    section#features{
+        height: auto;
+    }
+    
+    section#features .content{
+        flex-direction: column;
+    }
+    section#features .content .featuresPoints{
+        width: 100%;
+        height: auto;
+    }
+    section#features .content .pic{
+        width: 100%;
+        height: auto;
+    }
+    section#features .content .pic img{
+        width: 80%;
+    }
+}
+
+/* Medium (md): من 768px إلى 991px */
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+}
+
+/* Large (lg): من 992px إلى 1199px */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+}
+
+/* Extra large (xl): من 1200px إلى 1399px */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+
+}
+
+/* XXL: أكبر من 1400px */
+@media (min-width: 1400px) {
+
+}
+
+/* end featuers */
+
+/* start feedback  */
+
+
+/* Extra small (xs): أقل من 576px */
+@media (max-width: 575.98px) {
+
+}
+
+/* Small (sm): من 576px إلى 767px */
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+}
+
+/* Medium (md): من 768px إلى 991px */
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+}
+
+/* Large (lg): من 992px إلى 1199px */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+}
+
+/* Extra large (xl): من 1200px إلى 1399px */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+
+}
+
+/* XXL: أكبر من 1400px */
+@media (min-width: 1400px) {
+
+}
+
+/* end feedback  */

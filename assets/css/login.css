@@ -1,0 +1,348 @@
+/* public  */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--main-font);
+}
+:root{
+    --accent-color: #4A9337;
+    --secondary-color: #EE7229;
+    --main-font : 'Kantumruy Pro', sans-serif 
+}
+/* btns */
+.getStarted{
+    color: #fff;
+    background-color: var(--secondary-color);
+    padding: 9px 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: .6s;
+}
+.getStarted:hover{
+    color: var(--secondary-color);
+    background-color: #fff;
+    font-weight: 600;
+}
+.logIn{
+    color: #fff;
+    background-color: var(--accent-color);
+    padding: 9px 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: .6s;
+}
+.containerr{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    position: relative;
+    overflow: hidden;
+}
+.containerr::after{
+    content: "";
+    position: absolute;
+    height: 2000px;
+    width: 2000px;
+    left: 0;
+    top: 0;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    transform: translateX(-60%);
+    z-index: -1;
+    /* animation-name: appear;
+    animation-iteration-count: 1;
+    animation-delay: 0s;
+    animation-duration: 4s; */
+    animation-name: appear;
+    animation-iteration-count: 1;
+    animation-delay: .2s;
+    animation-duration: 2s;
+}
+@keyframes appear{
+    0%{
+        opacity: 0;
+        transform: translateX(60%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(-60%);
+    }
+}
+@media (max-width:1070px) {
+    .containerr::after{
+        border-radius: 0%;
+        transform: translateX(-70%);
+    }
+}
+@media (max-width:1004px) {
+    .containerr::after{
+        border-radius: 0%;
+        transform: translateX(-80%);
+    }
+}
+@media (max-width:800px) {
+    .containerr::after{
+        border-radius: 0%;
+        transform: translateX(-85%);
+    }
+}
+@media (max-width:696px) {
+    .containerr::after{
+        border-radius: 0%;
+        transform: translateY(-92%);
+    }
+    .containerr{
+        padding: 20px;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+    }
+}
+
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.content img{
+    width: 350px ;
+    height: 350px;
+    border-radius: 50%;
+    animation-name: appear-img;
+    animation-iteration-count: 1;
+    animation-delay: 0s;
+    animation-duration: 2s;
+}
+@keyframes appear-img{
+    0%{
+        transform:translateX(-150%)
+    }
+    80%{
+        transform: translateX(2%);
+    }
+    90%{
+        transform: translateX(-1%);
+    }
+    100%{
+        transform: translateX(0%);
+        /* transform: translateY(0%); */
+    }
+}
+@media (max-width:696px) {
+    .content img{
+        width: 100px ;
+        height: 100px;
+    }
+    .content{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: row;
+        gap: 30px;
+    }
+}
+
+.content .msg  p{
+    font-size: 17px;
+    letter-spacing: 2px;
+    width: 500px;
+    color: #fff;
+    animation-name: appear-img;
+    animation-iteration-count: 1;
+    animation-delay: .2s;
+    animation-duration: 2s;
+}
+@media (max-width: 575.98px) {
+    .content .msg  p{
+        font-size: 10px;
+    }
+}
+
+
+@media (max-width:800px) {
+    .content img{
+        width: 150px ;
+        height: 150px;
+    }
+    .content .msg  p{
+        font-size: 17px;
+        letter-spacing: 2px;
+        width: 200px;
+    }
+    .content .msg h5{
+        font-size: 1.2rem;
+        color: #fff;
+        font-weight: 600;
+        letter-spacing: 2px;
+    }
+}
+@media (max-width: 575.98px) {
+    .containerr::after{
+        display: none;
+    }
+    .content{
+        display: none;
+    }
+    .content .msg  p{
+        display: none;
+    }
+    .content img{
+        display: none;
+    }
+}
+
+/* Small (sm): من 576px إلى 767px */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .containerr::after{
+        display: none;
+    }
+    .content{
+        display: none;
+    }
+}
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.form-container form{
+    width: 100%;
+    height: 460px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    animation-name: appear-form;
+    animation-iteration-count: 1;
+    animation-delay: 0;
+    animation-duration: 2s;
+}
+@keyframes appear-form{
+    0%{
+        transform:translateX(150%)
+    }
+    80%{
+        transform: translateX(-1%);
+    }
+    90%{
+        transform: translateX(2%);
+    }
+    100%{
+        transform: translateX(0%);
+        /* transform: translateY(0%); */
+    }
+}
+@media (max-width:696px) {
+    .form-container form{
+        margin-top: -50px;
+    }
+}
+form h1 {
+    font-size: 2rem;
+    margin-bottom: 7px;
+    color: #444;
+}
+
+.input-field {
+    width: 340px;
+    height: 47px;
+    background-color: #f0f0f0;
+    margin: 10px 0;
+    border-radius: 55px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 .4rem;
+}
+
+.input-field i {
+    color: #acacac;
+    text-align: center;
+    line-height: 55px;
+    font-size: 1.1rem;
+}
+
+.input-field input {
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 900;
+    font-size: 1.1rem;
+}
+
+.input-field input::placeholder {
+    color: #aaa;
+    font-weight: 500;
+}
+
+
+.account{
+    margin-top: 50px;
+    color: #000;
+    animation-name: appear-form;
+    animation-iteration-count: 1;
+    animation-delay: .1s;
+    animation-duration: 2s;
+}
+.accountSinup{
+    margin-top: 40px;
+}
+@media (max-width:696px) {
+    .account{
+        margin-top: -20px;
+    }
+    
+}
+.account a{
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+.forgetPass{
+    text-decoration: none;
+    color: #444;
+    animation-name: appear-form;
+    animation-iteration-count: 1;
+    animation-delay: .2s;
+    animation-duration: 2s;
+}
+@media (max-width:1070px) {
+    
+}
+.session-msg{
+    animation-name: hideMsg;
+    animation-iteration-count: 1;
+    animation-delay: 0;
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+}
+@keyframes hideMsg {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: .5;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+.error{
+    color: red;
+}
+
+.imLinks{
+    display: flex;
+    gap: 30px;
+}

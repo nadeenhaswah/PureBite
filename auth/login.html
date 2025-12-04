@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO -->
+    <meta name="title" content="PureBite | Start Your Healthy Journey">
+    <meta name="description" content="PureBite helps you start a healthier lifestyle with smart tools, guidance, and easy-to-use features designed to support your wellness journey.">
+
+    <!-- style  -->
+    <link rel="stylesheet" href="../assets/css/login.css">
+
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- google fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Favicon  -->
+    <link rel="icon" type="image/x-icon" href="../assets/images/main-logo.svg">
+    <title>PureBite</title>
+</head>
+<body>
+    <div class="containerr">
+        <div class="content">
+            <img src="../assets/images/login.svg" alt="">
+            <div class="msg">
+                <br>
+                <br>
+                <br>
+                <p>Log in and stay on track with PureBite — your journey to a healthier, smarter lifestyle continues here.</p>
+
+            </div>
+        </div>
+        <div class="form-container">
+            <form action="logIn_process.php" method="POST">
+                
+                <h1>LogIn</h1>
+                <input type="hidden"/>
+
+                <div class="input-field">
+                    <i class="fa-regular fa-user"></i>
+                    <input type="text" class="email" placeholder="email" name="email" />
+                </div>
+                
+    
+                <div class="input-field">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Password" name="password"  />
+                </div>
+                <div class="note"></div>
+
+                
+                <a href="#" class="logIn">LogIn</a>
+
+            </form>
+            <div class="no-account account">
+                <p>Don't have an account ? <a href="signup.html">Register</a></p>
+            </div>
+            <div class="imLinks">
+                <a href="#" class="forgetPass">Forget Password </a>
+                <a href="../index.html" class="forgetPass">Back </a>
+            </div>
+
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script type="module" src="../assets/js/login.js" ></script>
+
+</body>
+</html>

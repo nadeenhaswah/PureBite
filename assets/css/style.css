@@ -49,7 +49,7 @@ nav{
     content: "";
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: 0; 
     width: 0%;
     height: 2px;
     background-color: #0D7777;
@@ -75,6 +75,7 @@ nav{
     color: var(--secondary-color);
     background-color: #fff;
     font-weight: 600;
+    border: 1px solid var(--secondary-color);
 }
 .logIn{
     color: #fff;
@@ -84,10 +85,15 @@ nav{
     text-decoration: none;
     transition: .6s;
 }
+.logIn:hover{
+    border:  1px solid var(--accent-color);
+    background-color: #fff;
+    color: var(--accent-color);
+}
 
 .learnMoreHero{
     color: var(--secondary-color);
-    border: 2px solid var(--secondary-color);
+    border: 1px solid var(--secondary-color);
     background-color: non;
     padding: 9px 12px;
     border-radius: 10px;
@@ -95,6 +101,7 @@ nav{
     transition: .6s;
 }
 .learnMoreHero:hover{
+    border: none;
     color: var(--secondary-color);
     background-color: #fff;
     font-weight: 600;
@@ -111,7 +118,7 @@ section#home .hero{
     position: relative;
     
 }
-section#home .hero::after{
+/* section#home .hero::after{
     content: "";
     position: absolute;
     width: 100%;
@@ -120,6 +127,10 @@ section#home .hero::after{
     left: 0;
     background-color: rgba(0, 0, 0, .7);
     z-index: -9;
+} */
+section#home .hero {
+    background-image: linear-gradient(to right , rgba(33, 105, 17, 0.9) 10% ,
+    rgba(33, 105, 17, 0.7) 40% , rgba(255,255,255,0) 100%);
 }
 section#home .hero img{
     width: 100%;
@@ -166,7 +177,7 @@ section#home .hero .content div.btns a{
         padding: 10px 0;
     }
     section#home .hero .content h1{
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
     section#home .hero .content{
         margin-top: 80px;
@@ -174,11 +185,12 @@ section#home .hero .content div.btns a{
         justify-content: center;
         gap: 40px;
     }
+    
     section#home .hero .content h1 , section#home .hero .content p ,section#home .hero .content div.btns{
-        width: 90%;
+        width: 100%;
     }
     section#home .hero .content p{
-        font-size: 18px;
+        font-size: 14px;
         font-weight: 400;
     }
 }
@@ -324,15 +336,24 @@ section#about .content .aboutPoints .link{
     section#about {
         height: auto;
     }
+    section#about .content .pic img{
+        width: 97%;
+    }
 }
 
 /* Medium (md): من 768px إلى 991px */
 @media (min-width: 768px) and (max-width: 991.98px) {
     section#about .content .aboutPoints{
-        width: 100%;
+        width: 50%;
     }
     section#about .content .pic{
-        width: 100%;
+        width: 45%;
+    }
+    section#about {
+        height: auto;
+    }
+    section#about .content .pic img{
+        width: 97%;
     }
 }
 
@@ -383,12 +404,45 @@ section#features .content .pic{
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+section#features .content .pic i.heart{
+    position: absolute;
+    z-index: 5;
+    color: var(--accent-color);
+    font-size: 2rem;
+    top: 15px;
+    right: 70px;
+    background-color: #d9d9d9;
+    padding: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+section#features .content .pic .tip{
+    position: absolute;
+    z-index: 5;
+    color: var(--accent-color);
+    font-size: .9rem;
+    font-weight: bold;
+    bottom: 150px;
+    left:  20px;
+    background-color: #d9d9d9;
+    padding: 10px;
+    width: auto;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 section#features .content .pic img{
     /* width: 100%; */
     height: 90%;
     box-shadow:  0 0 10px rgba(0, 0, 0, .7);
-    border-radius: 10px;
+    border-radius:40% 10px 40% 10px;
 }
 section#features .content .featuresPoints .points{
     /* width: 100%; */
@@ -422,6 +476,7 @@ section#features .content .featuresPoints .getStarted{
     }
     section#features .content .pic{
         width: 100%;
+        
     }
     
     section#features{
@@ -433,10 +488,26 @@ section#features .content .featuresPoints .getStarted{
     section#features .content .pic img{
         width: 80%;
     }
+    section#features .content .pic .tip{
+        bottom: 100px;
+        left:  -50px;
+    }
+    section#features .content .pic i.heart{
+        top: -10px;
+        right: 10px;
+    }
 }
 
 /* Small (sm): من 576px إلى 767px */
 @media (min-width: 576px) and (max-width: 767.98px) {
+    section#features .content .pic .tip{
+        bottom: 100px;
+        left:  -50px;
+    }
+    section#features .content .pic i.heart{
+        top: -10px;
+        right: 10px;
+    }
     section#features .content{
         gap: 50px;
     }
@@ -458,16 +529,54 @@ section#features .content .featuresPoints .getStarted{
     section#features .content .pic img{
         width: 80%;
     }
+    
 }
 
 /* Medium (md): من 768px إلى 991px */
 @media (min-width: 768px) and (max-width: 991.98px) {
-
+    section#features{
+        height: auto;
+    }
+    section#features .content .featuresPoints{
+        width: 50%;
+    }
+    section#features .content .pic{
+        width: 45%;
+        
+    }
+    section#features .content .pic img{
+        /* height: 70%; */
+        width: 100%;
+    }
+    section#features .content .pic .tip{
+        bottom: 150px;
+        left:  20px;
+    }
+    section#features .content .pic i.heart{
+        top: -10px;
+        right: 100px;
+    }
 }
 
 /* Large (lg): من 992px إلى 1199px */
 @media (min-width: 992px) and (max-width: 1199.98px) {
-
+    section#features .content .pic{
+        width: 35%;
+    }
+    section#features .content .pic img{
+        width: 100%;
+    }
+    section#features .content .featuresPoints{
+        width: 40%;
+    }
+    section#features .content .pic .tip{
+        bottom: 100px;
+        left:  -50px;
+    }
+    section#features .content .pic i.heart{
+        top: -10px;
+        right: 0px;
+    }
 }
 
 /* Extra large (xl): من 1200px إلى 1399px */
@@ -482,22 +591,199 @@ section#features .content .featuresPoints .getStarted{
 
 /* end featuers */
 
+
 /* start feedback  */
 
+section#feedback{
+    width: 100%;
+    height: 100vh;
+}
+section#feedback{
+    padding: 80px 50px 0px 0px ; 
+    /* width: 100%;
+    height: 100vh; */
+    padding-top: 80px; 
+    
+}
+section#feedback .content{
+    /* width: 100%; */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+section#feedback .content .formContainer{
+    width: 40%;
+    height: 100%;
+    background-color: var(--accent-color);
+    background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.4) 40%,
+    rgba(0, 0, 0, 0.2) 70%,
+    rgba(0, 0, 0, 0) 100%
+);
+    border-radius: 0 40% 0 0;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    padding: 20px 50px 20px 30px;
+    gap: 20px;
+}
+section#feedback .content .formContainer span{
+    color: #fff;
+}
+section#feedback .content .formContainer h3{
+    color: #fff;
+    /* font-size: 2.1rem; */
+}
 
+section#feedback .content .formContainer #feedbackForm{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+section#feedback .content .formContainer #feedbackForm input ,
+section#feedback .content .formContainer #feedbackForm .rating , 
+section#feedback .content .formContainer #feedbackForm textarea{ 
+    width: 100%;
+}
+section#feedback .content .formContainer #feedbackForm input{
+    border-radius: 10px;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+}
+section#feedback .content .formContainer #feedbackForm textarea{
+    border-radius: 10px;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    height: 130px;
+}
+section#feedback .content .formContainer #feedbackForm .rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px;
+}
+section#feedback .content .formContainer #feedbackForm .rating i{
+    font-size: 3rem;
+    color: #d9d9d9;
+}
+section#feedback .content .formContainer #feedbackForm .rating i.active{
+    color: var(--secondary-color);
+}
+section#feedback .content .formContainer #feedbackForm  button{
+    border: none;
+    outline: none;
+    width: fit-content;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+section#feedback .content .msgs{
+    width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    /* padding: 30px; */
+    overflow: hidden;
+}
+@keyframes slideUp {
+    0% { transform: translateY(0);
+    }
+    100% { transform: translateY(-200px); } 
+}
+section#feedback .content .msgs .msg{
+    animation: slideUp 6s linear infinite ;
+    animation-fill-mode: both;
+    display: flex;
+    width: 90%;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    box-shadow:  0 0 10px rgba(0, 0, 0, .7);
+    border-radius: 50px  0 50px 0;
+}
+section#feedback .content .msgs .msg i.quote{
+    font-size: 4rem;
+    /* color: var(--secondary-color); */
+}
+section#feedback .content .msgs .msg .feedContent{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+section#feedback .content .msgs .msg .feedContent .name{
+    font-weight: 800;
+}
+section#feedback .content .msgs .msg .feedContent .afterRating i{
+    color: var(--secondary-color);
+}
+section#feedback .content .msgs .msg .feedContent p{
+    font-size: 14px;
+}
 /* Extra small (xs): أقل من 576px */
 @media (max-width: 575.98px) {
-
+    section#feedback{
+        height: auto;
+    }
+    section#feedback .content .msgs{
+        width: 100%;
+        height: 100%;
+    }
+    section#feedback .content .formContainer{
+        width: 100%;
+    }
+    section#feedback .content .msgs{
+        padding-left: 50px;
+    }
+    section#feedback .content .msgs{
+        width: 100%;
+        height: 500px !important;
+    }
 }
 
 /* Small (sm): من 576px إلى 767px */
 @media (min-width: 576px) and (max-width: 767.98px) {
-
+    section#feedback{
+        height: auto;
+    }
+    section#feedback .content .msgs{
+        width: 100%;
+        height: 500px !important;
+    }
+    section#feedback .content .formContainer{
+        width: 100%;
+    }
+    section#feedback .content .msgs{
+        padding-left: 50px;
+    }
 }
 
 /* Medium (md): من 768px إلى 991px */
 @media (min-width: 768px) and (max-width: 991.98px) {
-
+    section#feedback{
+        height: auto;
+    }
+    section#feedback .content .msgs{
+        width: 45%;
+        height: auto;
+    }
+    section#feedback .content .formContainer{
+        width: 50%;
+    }
 }
 
 /* Large (lg): من 992px إلى 1199px */

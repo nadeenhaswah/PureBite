@@ -13,7 +13,6 @@ export const STORAGE_KEYS = {
     هو المسؤول عن كل التعاملات مع localStorage
 */
 export const StorageManager = {
-
     // هون بس بجيب الداتا من localStorage
     get(key) {
         const data = localStorage.getItem(key);

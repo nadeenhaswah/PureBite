@@ -20,6 +20,9 @@
 .aaddFormTable{
     background-color: var(--secondary-color);
 }
+.aaddUserTable{
+    background-color: var(--accent-color);
+}
 .usersCard{
     border-bottom: 1px solid var(--accent-color);
     border-left: 1px solid var(--accent-color); 

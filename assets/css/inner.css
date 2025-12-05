@@ -208,7 +208,7 @@ ul{
 
 .main-aside nav .main-item {
     width: 100%;
-    padding: 7px 3px;
+    padding: 5px 15px;
     /* border-bottom:1px solid  var(--accent-color); */
     cursor: pointer;
     display: flex;
@@ -238,6 +238,7 @@ ul{
         display: none;
         transition: ease-in-out .3s;
     }
+    
     .main-aside:hover nav .main-item a{
         display: block;
     }
@@ -248,8 +249,28 @@ ul{
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
-    padding: 0 0 0 0;
+    padding: 5px 10px;
 }
+/* Extra small (xs): أقل من 576px */
+@media (max-width: 575.98px) {
+    .main-aside nav .menu{
+        padding: 0;
+    }
+    .main-aside nav .main-item{
+        padding: 0;
+    }
+}
+
+/* Small (sm): من 576px إلى 767px */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .main-aside nav .menu{
+        padding: 0;
+    }
+    .main-aside nav .main-item{
+        padding: 0;
+    }
+}
+
 .main-aside nav .menu .branch-list-title{
     display: flex;
     align-items: center;

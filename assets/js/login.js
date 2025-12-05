@@ -10,6 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const loginBtn = document.querySelector(".logIn");
     const note = document.querySelector(".note");
 
+    loginBtn.click=function(){
+        console.log("press me")
+    }
     // تنظيف الرسالة
     function clearNote() {
         note.textContent = "";
@@ -47,11 +50,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // لو الادمن دخل
         if (email.toLowerCase() === ADMIN_EMAIL.toLowerCase()) {
-            window.location.href = "../admin/dashbord.html";
+            window.location.href = "../../admin/dashbord.html ";         
             return;
         }
 
         // لو يوزر عادي
-        window.location.href = "../user/user.html";
+        window.location.href = "../../defautlUser/allForms.html "
     });
 });

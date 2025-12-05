@@ -8,17 +8,17 @@ let formLogin = document.querySelector("form")
 let note = document.querySelector(".note")
 
 // Select the submit button inside the form
-let logIn = document.querySelector(".logIn")
+let logIn = document.querySelector(".loginBtn")
 
 // Add click event listener to the submit button
 logIn.addEventListener("click", function(event) {
-    event.preventDefault() // Prevent the form from submitting / reloading the page
+    // event.preventDefault() // Prevent the form from submitting / reloading the page
 
     // Get users array from StorageManager
     let users = StorageManager.get(STORAGE_KEYS.USERS)
 
     if ("admin@gmail.com" === formLogin[1].value  &&  "12345678" === formLogin[2].value ){
-             // window.location.href = "auth/login.html";   go page admin
+            window.location.href = "../../admin/dashbord.html";   
             console.log("go admin");
     }
 

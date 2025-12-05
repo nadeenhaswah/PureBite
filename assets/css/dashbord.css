@@ -17,12 +17,19 @@
 .innerFormCard{
     color: var(--secondary-color) !important;
 }
+.aaddFormTable{
+    background-color: var(--secondary-color);
+}
 .usersCard{
     border-bottom: 1px solid var(--accent-color);
     border-left: 1px solid var(--accent-color); 
 }
+
 .innerUserCard{
     color: var(--accent-color) !important;
+}
+.table-border{
+    border: 1px solid var(--secondary-color);
 }
 
 .welcome-section {

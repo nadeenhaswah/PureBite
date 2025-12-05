@@ -118,11 +118,18 @@
 
                     <div class="container ">
                         <div class="switch_op list-project">
-                            
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12 adding-project d-flex justify-content-end  align-items-center ">
+                                        <a href="add_project.php" class=" switch aaddFormTable text-white  from-cyan-400 via-cyan-500 to-cyan-600 focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-4 py-3 text-center  "><i class="fa-solid fa-plus"></i> Add Project</a>
+
+                                    </div>
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-12">
             
-                                    <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-4 switch">
+                                    <div class="relative overflow-x-auto shadow-lg  sm:rounded-lg mt-4 switch">
                                         <table class=" w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 ">
                                             <thead class="border-bottom switch text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                                 <tr>
@@ -132,8 +139,8 @@
                                                         </div>
 
                                                     </th>
-                                                    <th scope="col" class="px-4 py-3">
-                                                        <div class="flex items-center ">
+                                                    <th scope="col" class="px-6 py-3">
+                                                        <div class="flex  ">
                                                             Number of question
                                                         </div>
                                                     </th>
@@ -154,10 +161,10 @@
                                             <tbody>
                                                 
                                                         <tr class="switch bg-white border-b bg-gray-800  border-gray-200 ">
-                                                            <td class="px-6 py-4 font-medium text-gray-600 whitespace-nowrap dark:text-white">
+                                                            <td class="flex items-center   px-6 py-4 font-medium text-gray-600 whitespace-nowrap dark:text-white">
                                                                 Check Lifestyle
                                                             </td>
-                                                            <td class="px-6 py-4 ">
+                                                            <td class="px-6 text-center py-4 ">
                                                                 25
                                                             </td>
                                                             
@@ -167,10 +174,10 @@
                                                             <td class=" action px-6 py-4 ">
                                                                 <!-- <a type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Read More</a> -->
 
-                                                                <a href="readMoreAboutProject.php?id=<?= $project['id']; ?>" class="btn btn-success btn-sm read-more-btn">View</a>
+                                                                <a href="" class="btn btn-success btn-sm read-more-btn">View</a>
 
 
-                                                                <a href=" edit_project.php?id=<?= $project['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
+                                                                <a href="" class="btn btn-warning btn-sm">Edit</a>
 
                                                                 <!-- <form action="add_member_process.php" method="POST" class="d-inline">
                                                                 <button type="submit" name="delete_member"
@@ -178,7 +185,62 @@
                                                                     class="btn btn-danger btn-sm">Delete</button>
 
                                                             </form> -->
-                                                                <button class="btn btn-danger btn-sm delete-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-project-id="<?= $project['id']; ?>"> Delete</button>
+                                                                <button class="btn btn-danger btn-sm delete-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-project-id=""> Delete</button>
+
+
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="switch bg-white border-b bg-gray-800  border-gray-200 ">
+                                                            <td class="flex items-center   px-6 py-4 font-medium text-gray-600 whitespace-nowrap dark:text-white">
+                                                                Check Lifestyle
+                                                            </td>
+                                                            <td class="px-6 text-center py-4 ">
+                                                                25
+                                                            </td>
+                                                            
+                                                            <td class="px-4 py-4 whitespace-nowrap flex items-center ">
+                                                                active
+                                                            </td>
+                                                            <td class=" action px-6 py-4 ">
+                                                                <!-- <a type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Read More</a> -->
+
+                                                                <a href="" class="btn btn-success btn-sm read-more-btn">View</a>
+
+
+                                                                <a href="" class="btn btn-warning btn-sm">Edit</a>
+
+                                                                
+                                                                <button class="btn btn-danger btn-sm delete-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-project-id=""> Delete</button>
+
+
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="switch bg-white border-b bg-gray-800  border-gray-200 ">
+                                                            <td class="flex items-center   px-6 py-4 font-medium text-gray-600 whitespace-nowrap dark:text-white">
+                                                                Check Lifestyle
+                                                            </td>
+                                                            <td class="px-6 text-center py-4 ">
+                                                                25
+                                                            </td>
+                                                            
+                                                            <td class="px-4 py-4 whitespace-nowrap flex items-center ">
+                                                                active
+                                                            </td>
+                                                            <td class=" action px-6 py-4 ">
+                                                                <!-- <a type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Read More</a> -->
+
+                                                                <a href="" class="btn btn-success btn-sm read-more-btn">View</a>
+
+
+                                                                <a href="" class="btn btn-warning btn-sm">Edit</a>
+
+                                                                <!-- <form action="add_member_process.php" method="POST" class="d-inline">
+                                                                <button type="submit" name="delete_member"
+                                                                    value="<?= $member['id']; ?>"
+                                                                    class="btn btn-danger btn-sm">Delete</button>
+
+                                                            </form> -->
+                                                                <button class="btn btn-danger btn-sm delete-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-project-id=""> Delete</button>
 
 
                                                             </td>
@@ -212,6 +274,28 @@
                 
             </div>
         </article>
+        <!-- Modal for Delete-->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header switch">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Form</h1>
+                        <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body delete-user switch flex align-items-center justify-content-center flex-column">
+                        <h1><i class="fa-regular fa-circle-xmark text-danger"></i></h1>
+                        <p>Do you really want to delete this Form ? You won't be able to recover the data after deletion!</p>
+                    </div>
+                    <div class="modal-footer switch">
+                        <button type="button" aria-label="Close" data-bs-dismiss="modal" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                        <form action="" method="POST" class="d-inline">
+                            <button type="submit" name="delete_project" id="confirmDeleteBtn" class=" btn btn-danger">Delete</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
         <script>
             $(document).ready(function() {
                 // عرض/إخفاء الإشعارات

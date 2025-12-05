@@ -43,7 +43,7 @@
 
             <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                 <ul class="navbar-nav links">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item active-link"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
                     <li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
@@ -333,5 +333,31 @@
         </div>
     </footer>
     <!-- end footer  -->
+
+    <a class="toUp" href="#home"><i class="fa-solid fa-arrow-up"></i></a>
+    <script>
+
+        // toUp btn 
+        let toUp = document.querySelector('.toUp');
+        window.onscroll= function(){
+            toUp.style.display='block';
+        }
+
+        // active links
+        let Link = document.querySelectorAll('.nav-item');
+        for(let i = 0 ; i<Link.length ; i++){
+            
+            Link[i].addEventListener('click' , ()=>{
+
+                for(let j =0 ; j<Link.length ; j++){
+                    Link[j].classList.remove('active-link');
+                }
+
+                Link[i].classList.add('active-link');
+            })
+        }
+
+    </script>
+
 </body>
 </html>

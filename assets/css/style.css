@@ -10,6 +10,32 @@
     --secondary-color: #EE7229;
     --main-font : 'Kantumruy Pro', sans-serif 
 }
+/* toUp btn  */
+.toUp{
+    background-color: var(--secondary-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; 
+    font-size: 20px; 
+    padding: 10px; 
+    position: fixed; 
+    right: 30px; 
+    bottom: 10px; 
+    display: none;
+    color: #fff;
+    text-align: center;
+    animation: toUp 1s infinite;
+}
+@keyframes toUp{
+    0%{
+        scale: 1;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .7);
+    }
+    100%{   
+        scale: 1.2;
+        box-shadow: 0 0 20px rgba(0, 0, 0, .7);
+    }
+}
 
 /* public to sections */
 section:not(#home){
@@ -52,13 +78,20 @@ nav{
     bottom: 0; 
     width: 0%;
     height: 2px;
-    background-color: #0D7777;
+    background-color: var(--accent-color);
     text-decoration: underline;
     transition: .5s;
-    color: #0D7777;
 }
-.nav-item:hover::after{
+.nav-item.active-link::after{
     width: 100%;
+}
+.nav-item a:hover{
+    color: var(--accent-color);
+    font-weight: 600;
+}
+.active-link{
+    color: var(--accent-color);
+    font-weight: 600;
 }
 /* end header  */
 

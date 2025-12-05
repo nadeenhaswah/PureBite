@@ -120,8 +120,8 @@
                                                 </tr>
                                             </thead>
                                         
-                                            <tbody>
-                                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                            <tbody id="usersTableBody">
+                                                <!-- <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
 
                                                     <td class="px-4 py-4 text-center font-medium text-gray-600 dark:text-white">
                                                         1
@@ -136,19 +136,17 @@
                                                     </td>
                                                 
                                                     <td class="px-4 py-4 text-center space-x-2">
-                                                        <a class="btn btn-success btn-sm read-more-btn">View</a>
                                                     
-                                                        <a class="btn btn-warning btn-sm">Edit</a>
                                                     
                                                         <button class="btn btn-danger btn-sm delete-btn" 
                                                                 data-bs-toggle="modal" 
-                                                                data-bs-target="#exampleModal"
+                                                                data-bs-target="#deleteUser"
                                                                 data-project-id="">
                                                             Delete
                                                         </button>
                                                     </td>
                                                 
-                                                </tr>
+                                                </tr> -->
                                             </tbody>
                                         
                                         </table>
@@ -166,53 +164,29 @@
             </div>
         </article>
         <!-- Modal for Delete-->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="deleteUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header switch">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Form</h1>
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete User</h1>
                         <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body delete-user switch flex align-items-center justify-content-center flex-column">
                         <h1><i class="fa-regular fa-circle-xmark text-danger"></i></h1>
-                        <p>Do you really want to delete this Form ? You won't be able to recover the data after deletion!</p>
+                        <p>Do you really want to delete this User ? You won't be able to recover the data after deletion!</p>
                     </div>
                     <div class="modal-footer switch">
                         <button type="button" aria-label="Close" data-bs-dismiss="modal" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-                        <form action="" method="POST" class="d-inline">
-                            <button type="submit" name="delete_project" id="confirmDeleteBtn" class=" btn btn-danger">Delete</button>
+                        <button type="button" id="confirmDeleteBtn" class="btn btn-danger">Delete</button>
 
-                        </form>
                     </div>
                 </div>
             </div>
         </div>
-        <script>
-            $(document).ready(function() {
-                // عرض/إخفاء الإشعارات
-                $(document).on('click', '#notifications-icon', function(e) {
-                    e.stopPropagation();
-                    var container = $('#notifications-container');
-                    container.toggleClass('active');
-
-                    if (container.hasClass('active')) {
-                        container.load('notifications.php', function(response, status, xhr) {
-                            if (status == "error") {
-                                console.log("Error loading notifications: " + xhr.status + " " + xhr.statusText);
-                            }
-                        });
-                    }
-                });
-
-                // إغلاق الإشعارات عند النقر خارجها
-                $(document).click(function(e) {
-                    if (!$(e.target).closest('#notifications-container, #notifications-icon').length) {
-                        $('#notifications-container').removeClass('active');
-                    }
-                });
-            });
-        </script>
+        <script type="module" src="../assets/js/displayUsers.js"></script>
         <script src="../assets/js/aside_links.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     </body>
 
     </html>

@@ -24,6 +24,13 @@
         <meta name="title" content="PureBite | Start Your Healthy Journey">
         <meta name="description" content="PureBite helps you start a healthier lifestyle with smart tools, guidance, and easy-to-use features designed to support your wellness journey.">
 
+        <!-- tailwind  -->
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+        <!-- flowbite -->
+        <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
         <!-- Favicon  -->
         <link rel="icon" type="image/x-icon" href="../assets/images/main-logo.svg">
         <title>PureBite</title>
@@ -82,16 +89,33 @@
 
         </aside>
         <article class="switch_op">
-            <div class="dashboard-container">
+            <div class="container mt-5">
+            
+                <form class="max-w-lg mx-auto mt-5 border p-3 rounded">
+                    <div class="mb-5">
+                        <label for="username" class="block mb-2.5 text-sm font-medium text-heading">Username</label>
+                        <input type="text" name="username" id="username" class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-[#EE7229] focus:border-[#EE7229] block w-full px-3 py-2 rounded shadow-xs placeholder:text-body" placeholder="Username"  />
+                        <p class="note"></p>
+                    </div>
+                    <div class="mb-5">
+                        <label for="email" class="block mb-2.5 text-sm font-medium text-heading">Email</label>
+                        <input type="email" name="email" id="email" class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-[#EE7229] focus:border-brand block w-full px-3 py-2 rounded shadow-xs placeholder:text-body" placeholder="gmail.com.com"  />
+                        <p class="note"></p>
+                    </div>
+                    <div class="mb-5">
+                        <label for="password" class="block mb-2.5 text-sm font-medium text-heading">Password</label>
+                        <input type="password" name="password" id="password" class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-[#EE7229] focus:border-brand block w-full px-3 py-2 rounded shadow-xs placeholder:text-body" placeholder="••••••••"  />
+                        <p class="note"></p>
+                    </div>
+                    <div class="mb-5">
+                        <label for="password" class="block mb-2.5 text-sm font-medium text-heading">Confirm Password</label>
+                        <input type="password" name="confirm_password" id="password" class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-[#EE7229] focus:border-brand block w-full px-3 py-2 rounded shadow-xs placeholder:text-body" placeholder="••••••••"  />
+                        <p class="note"></p>
+                    </div>
                 
+                    <button type="submit" class="logIn text-white bg-[#EE7229] box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-[#EE7229]shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2 rounded focus:outline-none">Submit</button>
+                </form>
 
-                
-
-                
-
-                
-
-                
             </div>
         </article>
         <!-- Modal for Delete-->
@@ -116,31 +140,9 @@
                 </div>
             </div>
         </div>
-        <script>
-            $(document).ready(function() {
-                // عرض/إخفاء الإشعارات
-                $(document).on('click', '#notifications-icon', function(e) {
-                    e.stopPropagation();
-                    var container = $('#notifications-container');
-                    container.toggleClass('active');
+        <script type="module"  src="../assets/js/addUserByAdmin.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-                    if (container.hasClass('active')) {
-                        container.load('notifications.php', function(response, status, xhr) {
-                            if (status == "error") {
-                                console.log("Error loading notifications: " + xhr.status + " " + xhr.statusText);
-                            }
-                        });
-                    }
-                });
-
-                // إغلاق الإشعارات عند النقر خارجها
-                $(document).click(function(e) {
-                    if (!$(e.target).closest('#notifications-container, #notifications-icon').length) {
-                        $('#notifications-container').removeClass('active');
-                    }
-                });
-            });
-        </script>
         <script src="../assets/js/aside_links.js"></script>
     </body>
 

@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const notes = form.querySelectorAll(".note");
 
   // نفس الريجيكسات اللي بعتلي إياهم
-  const usernameRegex = /^[A-Za-z0-9_]+$/;
+const usernameRegex = /^[A-Za-z0-9_]+(?: [A-Za-z0-9_]+)?$/;
   const emailRegex = /^[A-Za-z0-9._%+-]+@gmail\.com$/;
   const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*?_.,-])[A-Za-z\d!@#$%^&*?_.,-]{6,20}$/;
 
@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // alert("Account created. You can login now.");
     
-    Swal.fire({
+  Swal.fire({
   title: "🎉 Account Created!",
   text: "Your account has been successfully created. You can log in now.",
   icon: "success",

@@ -2,22 +2,24 @@ import { StorageManager } from './storge.js';
 
 const usersTableBody = document.getElementById("usersTableBody");
 const confirmDeleteBtn = document.getElementById("confirmDeleteBtn");
+const usersCountSpan = document.querySelector(".usersNumber");
 
-let userIndexToDelete = null; // لتخزين index المستخدم المراد حذفه مؤقتاً
-
-const users = StorageManager.getUsers();
+let userIndexToDelete = null; 
+let users = StorageManager.getUsers();
 
 function renderUsers() {
     usersTableBody.innerHTML = ""; 
+    let displayIndex = 0;
 
     users.forEach((user, index) => {
-        if (user.email === "admin@gmail.com") return; // تجاهل الادمن
+        if (user.email === "admin@gmail.com") return;
+        displayIndex++;
 
         const tr = document.createElement("tr");
         tr.classList.add("bg-white", "border-b", "dark:bg-gray-800", "dark:border-gray-700");
         
         tr.innerHTML = `
-            <td class="px-4 py-4 text-center font-medium text-gray-600 dark:text-white">${index + 1}</td>
+            <td class="px-4 py-4 text-center font-medium text-gray-600 dark:text-white">${displayIndex}</td>
             <td class="px-4 py-4 text-center">${user.username}</td>
             <td class="px-4 py-4 text-center whitespace-nowrap">${user.email}</td>
             <td class="px-4 py-4 text-center space-x-2">
@@ -31,29 +33,30 @@ function renderUsers() {
         `;
         usersTableBody.appendChild(tr);
     });
+
+    const totalUsers = users.filter(u => u.email !== "admin@gmail.com").length;
+    usersCountSpan.textContent = totalUsers;
 }
 
 renderUsers();
 
-// عند الضغط على زر Delete داخل الجدول، خزني index المستخدم
 usersTableBody.addEventListener("click", function(e) {
     if (e.target.classList.contains("delete-btn")) {
-        userIndexToDelete = e.target.getAttribute("data-index");
+        userIndexToDelete = parseInt(e.target.getAttribute("data-index"));
     }
 });
 
-// عند الضغط على Confirm Delete داخل الـ Modal
 confirmDeleteBtn.addEventListener("click", function() {
     if (userIndexToDelete !== null) {
-        users.splice(userIndexToDelete, 1); // حذف المستخدم
-        StorageManager.set("purebite_users", users); // تحديث localStorage
-        renderUsers(); // إعادة عرض الجدول
-        userIndexToDelete = null; // إعادة تعيين المتغير
-        // إغلاق الـ Modal
+        users.splice(userIndexToDelete, 1); 
+        StorageManager.set("purebite_users", users); 
+        renderUsers(); 
+        userIndexToDelete = null; 
+
         const deleteModal = bootstrap.Modal.getInstance(document.getElementById('deleteUser'));
         deleteModal.hide();
 
-
+        // SweetAlert
         Swal.fire({
             icon: 'success',
             title: 'Deleted!',

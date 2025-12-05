@@ -20,7 +20,20 @@
         <link rel="stylesheet" href="../assets/css/dashbord.css">
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <title>manageEase</title>
+        <!-- tailwind  -->
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+        <!-- flowbite -->
+        <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
+        <!-- SEO -->
+        <meta name="title" content="PureBite | Start Your Healthy Journey">
+        <meta name="description" content="PureBite helps you start a healthier lifestyle with smart tools, guidance, and easy-to-use features designed to support your wellness journey.">
+
+        <!-- Favicon  -->
+        <link rel="icon" type="image/x-icon" href="../assets/images/main-logo.svg">
+        <title>PureBite</title>
     </head>
 
     <body>
@@ -48,65 +61,153 @@
 
         </aside>
         <article class="switch_op">
-            <div class="dashboard-container">
-                
-
-                
-
-                
-
-                
-
-                
-            </div>
-        </article>
-        <!-- Modal for Delete-->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header switch">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Form</h1>
-                        <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="container">
+                <!-- <div class="row callout callout-info">
+                    <div class="col-12 switch_op mt-3">
+                        <h1 class="mb-4 text-sm  text-secondary  md:text-5xl lg:text-6xl">Profile </h1>
                     </div>
-                    <div class="modal-body delete-user switch flex align-items-center justify-content-center flex-column">
-                        <h1><i class="fa-regular fa-circle-xmark text-danger"></i></h1>
-                        <p>Do you really want to delete this Form ? You won't be able to recover the data after deletion!</p>
-                    </div>
-                    <div class="modal-footer switch">
-                        <button type="button" aria-label="Close" data-bs-dismiss="modal" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-                        <form action="" method="POST" class="d-inline">
-                            <button type="submit" name="delete_project" id="confirmDeleteBtn" class=" btn btn-danger">Delete</button>
+                </div> -->
+                
+                <div class="row  mt-4 flex items-center justify-center text-center">
+                    
+                    <div class="switch col-md-9 mt-1  border border-gray-200 rounded-lg  ">
+                        <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+                            <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-styled-tab" data-tabs-toggle="#default-styled-tab-content" data-tabs-active-classes="text-[#EE7229] hover:text-[#EE7229] dark:text-blue-500 dark:hover:text-purple-500 border-[#EE7229] dark:border-purple-500" data-tabs-inactive-classes="dark:border-transparent text-gray-500 hover:text-gray-600 dark:text-gray-400 border-gray-100 hover:border-gray-300 dark:border-gray-700 dark:hover:text-gray-300" role="tablist">
+                                <li class="me-2" role="presentation">
+                                    <button class="inline-block px-5 py-3 border-b-2 rounded-t-lg" id="profile-styled-tab" data-tabs-target="#styled-profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+                                </li>
+                                <li class="me-2" role="presentation">
+                                    <button class="inline-block px-5 py-3 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="dashboard-styled-tab" data-tabs-target="#styled-dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Update Information</button>
+                                </li>
+                                <li class="me-2" role="presentation">
+                                    <button class="inline-block px-5 py-3 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="settings-styled-tab" data-tabs-target="#styled-settings" type="button" role="tab" aria-controls="settings" aria-selected="false">Change Password</button>
+                                </li>
 
-                        </form>
+                            </ul>
+                        </div>
+                        <div id="default-styled-tab-content switch">
+                            <div class="w-full switch hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <section class=" switch py-8 antialiased dark:bg-gray-900 md:py-16">
+                                    <div class="w-full   px-4 2xl:px-0">
+                                        <div class="space-y-4 switch sm:space-y-2 rounded-lg bg-gray-50 p-6 dark:border-gray-700 dark:bg-gray-800 mb-6 md:mb-8">
+                                            <dl class="sm:flex items-center justify-between gap-4">
+                                                <dt class="font-normal mb-1 sm:mb-0 text-gray-500 dark:text-gray-400">Name</dt>
+                                                <dd class="font-medium text-gray-400 dark:text-white sm:text-end text-capitalize"> User name</dd>
+                                            </dl>
+                                            <dl class="sm:flex items-center justify-between gap-4">
+                                                <dt class="font-normal mb-1 sm:mb-0 text-gray-500 dark:text-gray-400">Email</dt>
+                                                <dd class="font-medium text-gray-400 dark:text-white sm:text-end">example@gmail.com</dd>
+                                            </dl>
+                                            
+                            
+
+                                        </div>
+
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="hidden p-4 switch rounded-lg bg-gray-50 " id="styled-settings" role="tabpanel" aria-labelledby="settings-tab">
+
+
+                                <form class="max-w-lg mx-auto switch">
+                                    <div class="mb-5">
+                                        <label for="email" class="block mb-2 text-sm font-medium text-gray-600 dark:text-white">Your email</label>
+                                        <input 
+                                            type="email" 
+                                            name="email" 
+                                            id="email"
+                                            value="example@gmail.com"
+                                            class="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+                                                focus:ring-[#EE7229] focus:border-[#EE7229] block w-full p-2 
+                                                dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white 
+                                                dark:focus:ring-[#EE7229] dark:focus:border-[#EE7229] dark:shadow-xs-light" 
+                                        />
+                                    </div>
+
+                                    <div class="mb-5">
+                                        <label for="password" class="block mb-2 text-sm font-medium text-gray-600 dark:text-white">New password</label>
+                                        <input 
+                                            type="password" 
+                                            name="password" 
+                                            placeholder="••••••••" 
+                                            id="password"
+                                            class="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+                                                focus:ring-[#EE7229] focus:border-[#EE7229] block w-full p-2 
+                                                dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white 
+                                                dark:focus:ring-[#EE7229] dark:focus:border-[#EE7229] dark:shadow-xs-light" 
+                                        />
+                                    </div>
+
+                                    <div class="mb-5">
+                                        <label for="repeat-password" class="block mb-2 text-sm font-medium text-gray-600 dark:text-white">Confirm New password</label>
+                                        <input 
+                                            type="password" 
+                                            name="confirm_password" 
+                                            placeholder="••••••••" 
+                                            id="repeat-password"
+                                            class="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+                                                focus:ring-[#EE7229] focus:border-[#EE7229] block w-full p-2 
+                                                dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white 
+                                                dark:focus:ring-[#EE7229] dark:focus:border-[#EE7229] dark:shadow-xs-light" 
+                                        />
+                                    </div>
+
+                                    <button 
+                                        type="submit" 
+                                        name="reset"
+                                        class="text-white bg-[#EE7229] hover:bg-[#cf5f1f] focus:ring-4 focus:outline-none focus:ring-[#f3a476] 
+                                            font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                        Reset Password
+                                    </button>
+                                </form>
+
+
+                            </div>
+                            <div class="switch hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-dashboard" role="tabpanel" aria-labelledby="dashboard-styled-tab">
+                                <form action="update_information.php" method="POST" enctype="multipart/form-data">
+                                    <div class="relative z-0 w-full mb-5 group">
+                                        
+                                        <div class="flex flex-col mb-5">
+                                            <label class="text-lg text-start text-gray-600 mb-1">Username</label>
+                                            <input 
+                                                type="text" 
+                                                name="username" 
+                                                value="username"
+                                                class="py-2 px-3 w-full text-sm text-gray-700 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#EE7229]"
+                                            />
+                                            <p class="error"></p>
+                                        </div>
+
+                                        <div class="flex flex-col mb-5">
+                                            <label class="text-lg text-start text-gray-600 mb-1">Email address</label>
+                                            <input 
+                                                type="email" 
+                                                name="email" 
+                                                value="example@gmail.com"
+                                                class="py-2 px-3 w-full text-sm text-gray-700 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#EE7229]"
+                                            />
+                                            <p class="error"></p>
+                                        </div>
+
+                                        
+                                        
+                                        <button type="submit" name="update" class="text-white bg-[#EE7229] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Update</button>
+                                </form>
+
+                            </div>
+
+
+                        </div>
+
                     </div>
                 </div>
+
+
             </div>
-        </div>
-        <script>
-            $(document).ready(function() {
-                // عرض/إخفاء الإشعارات
-                $(document).on('click', '#notifications-icon', function(e) {
-                    e.stopPropagation();
-                    var container = $('#notifications-container');
-                    container.toggleClass('active');
-
-                    if (container.hasClass('active')) {
-                        container.load('notifications.php', function(response, status, xhr) {
-                            if (status == "error") {
-                                console.log("Error loading notifications: " + xhr.status + " " + xhr.statusText);
-                            }
-                        });
-                    }
-                });
-
-                // إغلاق الإشعارات عند النقر خارجها
-                $(document).click(function(e) {
-                    if (!$(e.target).closest('#notifications-container, #notifications-icon').length) {
-                        $('#notifications-container').removeClass('active');
-                    }
-                });
-            });
-        </script>
+            </div>
+        </article>
+        
+        
         <script src="../assets/js/aside_links.js"></script>
     </body>
 

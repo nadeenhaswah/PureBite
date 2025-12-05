@@ -802,3 +802,113 @@ section#feedback .content .msgs .msg .feedContent p{
 }
 
 /* end feedback  */
+
+/* start footer  */
+footer{
+    width: 100%;
+    height: auto;
+    margin-top: 50px;
+    background-color: #d9d9d9;
+    display: flex;
+    flex-direction: column !important;
+    justify-content: space-between;
+}
+footer .copyRight{
+    /* position: absolute; */
+    padding: 20px;
+    width: 100%;
+    height: 10%;
+    background-color: var(--accent-color);
+    display: flex;
+    align-items:  center !important;
+    justify-content: center;
+    color: #fff;
+}
+footer .footerContent{
+    padding: 40px 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 90%;
+}
+.center{
+    text-align: center;
+}
+.bold{
+    font-weight: 900;
+    color: var(--accent-color);
+}
+footer .footerContent .box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width:30% ;
+    height: 100%;
+    gap: 20px;
+}
+footer .footerContent .box.links ul  a{
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+footer .footerContent .box .icons{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-size: 1.5rem;
+}
+footer .footerContent .box .icons span a i{
+    color: var(--secondary-color);
+    
+}
+
+
+
+
+/* Extra small (xs): أقل من 576px */
+@media (max-width: 575.98px) {
+    footer .footerContent .box{
+        width: 100%;
+        /* height: auto; */
+    }
+    footer .copyRight{
+        height: auto;
+    }
+}
+
+/* Small (sm): من 576px إلى 767px */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    footer .footerContent .box{
+        width: 100%;
+        height: auto;
+    }
+    footer .copyRight{
+        height: auto;
+    }
+}
+
+/* Medium (md): من 768px إلى 991px */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    
+}
+
+/* Large (lg): من 992px إلى 1199px */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+}
+
+/* Extra large (xl): من 1200px إلى 1399px */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+
+}
+
+/* XXL: أكبر من 1400px */
+@media (min-width: 1400px) {
+
+}
+
+/* end footer  */

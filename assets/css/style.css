@@ -779,7 +779,7 @@ section#feedback .content .msgs .msg .feedContent p{
     }
     section#feedback .content .msgs{
         width: 45%;
-        height: auto;
+        height: 500px !important;
     }
     section#feedback .content .formContainer{
         width: 50%;

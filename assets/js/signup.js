@@ -42,7 +42,7 @@ logIn.addEventListener("click", function (event) {
   } else {
     // console.log(formRegister[1].value === user.email)
     let users = StorageManager.get(STORAGE_KEYS.USERS);
-   
+  
     let isFoundEmailInLocalStorage = users.some((user) => {
       return formRegister[2].value === user.email;
     });
@@ -98,7 +98,7 @@ logIn.addEventListener("click", function (event) {
   if (isCheckTrueAllInputs === true) {
     // Add the new user to storage
     StorageManager.addUser(user);
-   
+
         // window.location.href ="http://127.0.0.1:64532/auth/login.html";
         window.location.href = "auth/login.html";
 

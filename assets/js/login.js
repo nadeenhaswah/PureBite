@@ -16,18 +16,18 @@ logIn.addEventListener("click", function(event) {
 
     // Get users array from StorageManager
     let users = StorageManager.get(STORAGE_KEYS.USERS)
-   
-   if ("admin@gmail.com" === formLogin[1].value  &&  "12345678" === formLogin[2].value ){
+
+    if ("admin@gmail.com" === formLogin[1].value  &&  "12345678" === formLogin[2].value ){
              // window.location.href = "auth/login.html";   go page admin
-             console.log("go admin");
-   }
+            console.log("go admin");
+    }
 
 
     // Using some() to check if there is at least one user true
     // If any user matches, some() returns true immediately.
-   let isFoundEmailAndPasswordInLocalStorage  = users.some((user) => {
+    let isFoundEmailAndPasswordInLocalStorage  = users.some((user) => {
         return formLogin[1].value === user.email && formLogin[2].value === user.password
-         });
+        });
 
     // Check if the entered email and password match the  user
     if (isFoundEmailAndPasswordInLocalStorage) {

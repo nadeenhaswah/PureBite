@@ -1,47 +1,57 @@
-import { StorageManager, STORAGE_KEYS } from "./storge.js"
+// هون بستورد الستورج والادمن
+import { StorageManager, ADMIN_EMAIL } from "./storge.js";
 
-// Select the form element
-let formLogin = document.querySelector("form")
+document.addEventListener("DOMContentLoaded", () => {
 
+    // هون بمسك العناصر اللي بدي اشتغل عليها
+    const form = document.querySelector("form");
+    const emailInput = form.querySelector('input[name="email"]');
+    const passwordInput = form.querySelector('input[name="password"]');
+    const loginBtn = document.querySelector(".logIn");
+    const note = document.querySelector(".note");
 
-// Select the note element to show messages
-let note = document.querySelector(".note")
-
-// Select the submit button inside the form
-let logIn = document.querySelector(".loginBtn")
-
-// Add click event listener to the submit button
-logIn.addEventListener("click", function(event) {
-    // event.preventDefault() // Prevent the form from submitting / reloading the page
-
-    // Get users array from StorageManager
-    let users = StorageManager.get(STORAGE_KEYS.USERS)
-
-    if ("admin@gmail.com" === formLogin[1].value  &&  "12345678" === formLogin[2].value ){
-            window.location.href = "../../admin/dashbord.html";   
-            console.log("go admin");
-    }
-
-
-    // Using some() to check if there is at least one user true
-    // If any user matches, some() returns true immediately.
-    let isFoundEmailAndPasswordInLocalStorage  = users.some((user) => {
-        return formLogin[1].value === user.email && formLogin[2].value === user.password
-        });
-
-    // Check if the entered email and password match the  user
-    if (isFoundEmailAndPasswordInLocalStorage) {
-        // go page
+    // تنظيف الرسالة
+    function clearNote() {
         note.textContent = "";
-    } else if(formLogin[1].value === "" || formLogin[2].value === ""){
-        note.style.color = "red";
-        note.textContent = "Please enter your username/email";
-    }
-    else {
-        // Show error message in red
-        note.style.color = "red";
-        note.textContent = "Email or password is incorrect";
     }
 
+    // عرض رسالة خطأ
+    function showError(msg) {
+        note.style.color = "red";
+        note.textContent = msg;
+    }
 
-})
+    // لما اضغط على زر login
+    loginBtn.addEventListener("click", (event) => {
+        event.preventDefault(); // عشان ما يعمل refresh للصفحة
+
+        clearNote();
+
+        const email = emailInput.value.trim();
+        const password = passwordInput.value.trim();
+
+        // هون بتأكد اذا الحقول فاضية
+        if (!email || !password) {
+            showError("Enter email and password");
+            return;
+        }
+
+        // هون بحاول اسجل دخول
+        const user = StorageManager.loginUser(email, password);
+
+        // لو البيانات غلط
+        if (!user) {
+            showError("Email or password incorrect");
+            return;
+        }
+
+        // لو الادمن دخل
+        if (email.toLowerCase() === ADMIN_EMAIL.toLowerCase()) {
+            window.location.href = "../admin/dashbord.html";
+            return;
+        }
+
+        // لو يوزر عادي
+        window.location.href = "../user/user.html";
+    });
+});

@@ -10,7 +10,11 @@
             crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
+        <!-- Bootstrap 5 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        
         <!-- fontawesome  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <script src="https://kit.fontawesome.com/3e1d046fbe.js" crossorigin="anonymous"></script>
         <!-- flowbite -->
         <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
@@ -20,29 +24,36 @@
         <link rel="stylesheet" href="../assets/css/dashbord.css">
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        
+
         <!-- SEO -->
         <meta name="title" content="PureBite | Start Your Healthy Journey">
         <meta name="description" content="PureBite helps you start a healthier lifestyle with smart tools, guidance, and easy-to-use features designed to support your wellness journey.">
 
         <!-- Favicon  -->
         <link rel="icon" type="image/x-icon" href="../assets/images/main-logo.svg">
+        <!-- Bootstrap 5 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        
+        <!-- Google Fonts - Kantumruy Pro -->
+        <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../assets/css/formsStyle.css">
+
         <title>PureBite</title>
     </head>
 
     <body>
 
         <header class="main-header switch">
-        <!-- <div class="container">
-        <div class="row">
-            <div class="col-12"> -->
-        <div class="logo switch">
-            <!-- <img src="../assets/images/main-logo.svg" alt=""> -->
-        </div>
-        <div class="branch-container">
+            <!-- <div class="container">
+            <div class="row">
+                <div class="col-12"> -->
+            <div class="logo switch">
+                <!-- <img src="../assets/images/main-logo.svg" alt=""> -->
+            </div>
+            <div class="branch-container">
 
-        </div>
-    </header>
+            </div>
+        </header>
         <aside class="main-aside switch">
 
             <nav>
@@ -83,58 +94,89 @@
 
         </aside>
         <article class="switch_op">
-            <div class="dashboard-container">
-                
-            </div>
-        </article>
-        <!-- Modal for Delete-->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header switch">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Form</h1>
-                        <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body delete-user switch flex align-items-center justify-content-center flex-column">
-                        <h1><i class="fa-regular fa-circle-xmark text-danger"></i></h1>
-                        <p>Do you really want to delete this Form ? You won't be able to recover the data after deletion!</p>
-                    </div>
-                    <div class="modal-footer switch">
-                        <button type="button" aria-label="Close" data-bs-dismiss="modal" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-                        <form action="" method="POST" class="d-inline">
-                            <button type="submit" name="delete_project" id="confirmDeleteBtn" class=" btn btn-danger">Delete</button>
+            <!-- Main Content -->
+            <div class="container mt-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                <!-- Page Header -->
+                        <div class="text-center mb-5">
+                    <h1 class="fw-bold mb-3" style="color: var(--accent-color);">
+                        <i class="fas fa-plus-circle me-2"></i>Create New Form
+                    </h1>
+                    <p class="text-muted">Create a custom health assessment form for your patients</p>
+                        </div>
 
-                        </form>
+                <!-- Form Steps -->
+                <div class="card shadow">
+                    <div class="card-body p-4">
+                        <!-- Progress Steps -->
+                        <div class="steps-progress mb-5">
+                            <div class="steps">
+                                <div class="step active" data-step="1">
+                                    <div class="step-circle">1</div>
+                                    <div class="step-label">Form Details</div>
+                                </div>
+                                <div class="step" data-step="2">
+                                    <div class="step-circle">2</div>
+                                    <div class="step-label">Questions</div>
+                                </div>
+                                <div class="step" data-step="3">
+                                    <div class="step-circle">3</div>
+                                    <div class="step-label">Results Scoring</div>
+                                </div>
+                                <div class="step" data-step="4">
+                                    <div class="step-circle">4</div>
+                                    <div class="step-label">Preview</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step Content -->
+                        <div id="wizard-content">
+                            <!-- Content loaded dynamically -->
+                        </div>
+
+                        <!-- Navigation Buttons -->
+                        <div class="d-flex justify-content-between mt-5 pt-4 border-top">
+                            <button id="prev-btn" class="btn btn-outline-secondary" disabled>
+                                <i class="fas fa-arrow-left me-1"></i> Previous
+                            </button>
+                            <button id="next-btn" class="btn btn-primary">
+                                Next <i class="fas fa-arrow-right ms-1"></i>
+                            </button>
+                            <button id="save-btn" class="btn btn-secondary" style="display: none;">
+                                <i class="fas fa-save me-1"></i> Save Form
+                            </button>
+                        </div>
+                    </div>
+                </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <script>
-            $(document).ready(function() {
-                // عرض/إخفاء الإشعارات
-                $(document).on('click', '#notifications-icon', function(e) {
-                    e.stopPropagation();
-                    var container = $('#notifications-container');
-                    container.toggleClass('active');
 
-                    if (container.hasClass('active')) {
-                        container.load('notifications.php', function(response, status, xhr) {
-                            if (status == "error") {
-                                console.log("Error loading notifications: " + xhr.status + " " + xhr.statusText);
-                            }
-                        });
-                    }
-                });
-
-                // إغلاق الإشعارات عند النقر خارجها
-                $(document).click(function(e) {
-                    if (!$(e.target).closest('#notifications-container, #notifications-icon').length) {
-                        $('#notifications-container').removeClass('active');
-                    }
-                });
-            });
-        </script>
+            <!-- Text Formatting Modal -->
+                <div class="modal fade" id="textFormatModal" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Text Formatting</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Dynamic content -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </article>
+        
+        
         <script src="../assets/js/aside_links.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../assets/js/form-builder.js"></script>
+        <script src="../assets/js/formStorage.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     </body>
 
     </html>

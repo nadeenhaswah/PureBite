@@ -1,0 +1,258 @@
+/* Updated Color Scheme */
+:root {
+    --accent-color: #4A9337;      /* Main green for success/primary */
+    --secondary-color: #EE7229;   /* Orange for highlights/secondary */
+    --main-font: 'Kantumruy Pro', sans-serif;
+    --light-bg: #f8f9fa;
+    --dark-text: #212529;
+    --light-text: #6c757d;
+    --white: #ffffff;
+    --black: #000000;
+    --border-color: #dee2e6;
+    --success-light: #d4edda;
+    --warning-light: #fff3cd;
+}
+
+/* Base Styles */
+body {
+    font-family: var(--main-font);
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    direction: ltr;
+    text-align: left;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: var(--accent-color);
+    font-size: 1.5rem;
+}
+
+.navbar-brand span.accent {
+    color: var(--secondary-color);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: #3d7a2d;
+    border-color: #3d7a2d;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background-color: #d8611f;
+    border-color: #d8611f;
+}
+
+.btn-outline-primary {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+
+/* Cards */
+.card {
+    border: none;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    border-radius: 10px;
+}
+
+.card-header {
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 600;
+}
+
+/* Progress Steps */
+.steps-progress {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.steps::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--border-color);
+    z-index: 1;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    flex: 1;
+}
+
+.step-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--border-color);
+    color: var(--light-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-bottom: 8px;
+    border: 3px solid var(--white);
+    transition: all 0.3s;
+}
+
+.step.active .step-circle {
+    background-color: var(--accent-color);
+    color: var(--white);
+    transform: scale(1.1);
+}
+
+.step-label {
+    font-size: 0.9rem;
+    color: var(--light-text);
+}
+
+.step.active .step-label {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* Form Elements */
+.form-control:focus, .form-select:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.25rem rgba(74, 147, 55, 0.25);
+}
+
+/* Question Cards */
+.question-card {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--white);
+    transition: all 0.3s;
+    margin-bottom: 1.5rem;
+}
+
+.question-card:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Alerts */
+.alert-info {
+    background-color: #e7f3ff;
+    border-color: #b8daff;
+    color: #004085;
+}
+
+.alert-success {
+    background-color: var(--success-light);
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+/* Badges */
+.badge.bg-primary {
+    background-color: var(--accent-color) !important;
+}
+
+.badge.bg-secondary {
+    background-color: var(--secondary-color) !important;
+}
+
+/* Range Items */
+.range-item {
+    border: 1px dashed var(--border-color);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: var(--light-bg);
+}
+
+.range-item:hover {
+    border-color: var(--accent-color);
+    background-color: rgba(74, 147, 55, 0.05);
+}
+
+/* Preview Section */
+.preview-question {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .steps {
+        flex-wrap: wrap;
+    }
+    
+    .step {
+        flex: 0 0 50%;
+        margin-bottom: 20px;
+    }
+    
+    .step-circle {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.step-content, .question-card {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3d7a2d;
+}

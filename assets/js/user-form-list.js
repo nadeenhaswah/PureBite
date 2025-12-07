@@ -48,10 +48,11 @@ function loadAvailableForms() {
 
                 html += `
                     <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="card h-100 shadow-sm border-0 hover:shadow-lg transition-all">
+                        <div class="card h-100 shadow-md  hover:shadow-lg hover:h-190 transition-all "style=" border-left: 0 solid #EE7229; transition: 0.3s;"
+     onmouseover="this.style.borderLeft='4px solid #EE7229'; "
+     onmouseout="this.style.borderLeft='0 solid #EE7229'; ">
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title fw-bold text-[#EE7229] mb-2">${form.title || 'Untitled'}</h5>
-                                <span class="badge bg-secondary mb-3 w-auto align-self-start">${form.category || 'General'}</span>
                                 <p class="card-text text-muted flex-grow-1">
                                     ${shortDesc}
                                 </p>

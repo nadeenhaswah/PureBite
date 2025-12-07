@@ -196,4 +196,7 @@ function getCurrentUser() {
     } catch (error) {
         return null;
     }
+
+    
 }
+document.querySelector('.formNumber').textContent = getAllForms().length;

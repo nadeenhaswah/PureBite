@@ -27,7 +27,7 @@ function renderUsers() {
                         data-index="${index}" 
                         data-bs-toggle="modal" 
                         data-bs-target="#deleteUser">
-                    Delete
+                    <i class="fas fa-trash"></i>
                 </button>
             </td>
         `;
